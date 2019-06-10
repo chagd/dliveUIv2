@@ -1,0 +1,35 @@
+
+<!--
+
+rviz display launch file, used by drive.launch
+This file launches rviz. see ./rviz for config files.
+
+Copyright (c) 2019, Yongyang Nie
+All Rights Reserved.
+
+(E): contact@neilnie.com
+(W): www.neilnie.com
+
+-->
+
+<launch>
+
+    <!-- upload urdf -->
+<!--    <param name="robot_description" textfile="$(find driver)/urdf/robot.urdf" />-->
+<!--    <arg name="gui" default="true" />-->
+<!--    <param name="use_gui" value="$(arg gui)"/>-->
+
+<!--    &lt;!&ndash; load rviz configs &ndash;&gt;-->
+<!--    <arg name="rvizconfig" default="$(find driver)/rviz/default.rviz" />-->
+<!--    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />-->
+<!--    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />-->
+  
+    <!-- load rviz configs -->
+    <arg name="rvizconfig" default="$(find driver)/rviz/self-driving-golf-cart-default.rviz" />
+
+    <!-- ==================== launch rviz ======================   -->
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>
+

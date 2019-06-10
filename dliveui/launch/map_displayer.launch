@@ -1,0 +1,24 @@
+<launch>
+    <!--argument given >
+    <arg name="map_url" default="package://osm_cartography/maps/ixtapa.osm"/>
+    <-->
+    <arg name="map_url" default="package://dliveui/maps/iitd.osm"/> 
+    <node pkg="osm_cartography" type="osm_server" name="osm_server" output="screen">
+        <param name="map_url" value="$(arg map_url)"/>
+    </node>
+
+    <node pkg="osm_cartography" type="viz_osm" name="viz_osm">
+        <param name="map_url" value="$(arg map_url)"/>
+    </node>
+    
+    <node pkg="tf" type="static_transform_publisher" name="tf_world_map" args="0 0 0 0 0 0 1 /world /map 100" >
+        <param name="capability_group" value="0 tf"/>
+    </node>
+
+    <!-- Use this tf to properly locate the visualization on RVIZ. The arguments must contain the correct UTM coordinates for the map used -->
+    <node pkg="tf" type="static_transform_publisher" name="tf_map_local_map" args="714244.59 3159474.69 0 0 0 0 1 /map /local_map 100" >
+        <param name="capability_group" value="0 tf"/>
+    </node>
+    
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find dliveui)/rviz/iitd.rviz"/>
+</launch>

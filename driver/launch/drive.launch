@@ -1,0 +1,37 @@
+<!--
+
+This is the master launch file for the program.
+if you are looking for a way to run the system
+as a whole, you are at the right place. Currently,
+rviz and rosbag are running as default. No random
+changes accepted
+
+(c) Yongyang Nie, 2018
+All Rights Reserved.
+
+Copyright (c) 2019, Yongyang Nie
+All Rights Reserved.
+
+(E): contact@neilnie.com
+(W): www.neilnie.com
+
+-->
+
+
+<launch>
+
+    <!-- launch drive control launch file -->
+    <include file="$(find driver_control)/launch/joystick_control.launch" />
+
+	<!-- open up the zed camera -->
+	<include file="$(find zed_wrapper)/launch/zed.launch"/>
+
+    <!-- path planning and navigation control -->
+    <include file="$(find path_planning)/launch/rtabmap_navigation.launch" />
+
+    <!-- open rviz launch -->
+    <include file="$(find driver)/launch/display.launch"/>
+
+<!--    <node pkg="driver" name="run_rosbag" type="run_bag.sh" />-->
+    
+</launch>
