@@ -4,6 +4,7 @@
         <param name="map_url" value="$(arg map_url)"/>
     </node>
 
+    <remap from="/sensor/gps/fix" to="/ublox_gps/fix"/>
     <node pkg="osm_cartography" type="viz_osm" name="viz_osm">
         <param name="map_url" value="$(arg map_url)"/>
     </node>

@@ -62,7 +62,7 @@ Visualization Manager:
         other_osm: false
         railroad_osm: false
         roads_osm: true
-        waypoints_osm: true
+        waypoints_osm: false
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -140,26 +140,21 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/Orbit
-      Distance: 331.825684
+      Angle: -5.92500544
+      Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Focal Point:
-        X: 324.032898
-        Y: -95.198349
-        Z: 6.03493452
-      Focal Shape Fixed Size: true
-      Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.529797614
+      Scale: 2.04268622
       Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
-      Yaw: 6.28317308
+      Value: TopDownOrtho (rviz)
+      X: 107.556419
+      Y: 42.3815536
     Saved: ~
 Window Geometry:
   Displays:
